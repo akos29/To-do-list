@@ -1,3 +1,10 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: bisque;
 }
@@ -7,4 +14,92 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 10px;
   font-size: 1.7rem;
+}
+
+.to-do-container {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 10%;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom:0 ;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-right: auto;
+  align-items: center;
+}
+
+
+
+.toggle {
+  background-color: transparent;
+  padding: 0;
+  border: 2px solid #C1C1C4;
+  cursor:pointer;
+  height: 16px;
+  width: 16px;
+  padding: 17px 0;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+
+textarea {
+  padding: 3px 0;
+  line-height: 16px;
+  resize: none;
+  width: 90%;
+}
+
+ul li:hover,
+textarea:hover {
+  background-color: yellow;
+}
+
+.fa {
+  font-size: 48px;
+}
+
+.select-all {
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  background-color: #C1C1C4;
+  text-align:center;
+  /* margin-left:30%; */
+  border: 0;
+  margin: 0;
+  width: 100%;
+  padding: .95rem 7rem;
+}
+
+.draggable {
+  padding: .7rem 1rem;
+  background-color: white;
+  border: .5px solid #C1C1C4;
+  cursor: move;
+}
+
+.draggable .dragging {
+  opacity: .5;
+  background-color: #000;
 }

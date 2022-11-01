@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>To Do Tasks</title>
 </head>
 <body>
-    <h1>Hello webpack!</h1>
+    <h1>To Do Tasks</h1>
+    <div class="to-do-container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2">Today's To Do</div>
+            <div class="col-3"><i>refresh</i></div>
+        </div>        
+        <div class="row">
+            <div class="col">
+                <form>
+                    <input type="text" id="new-item" placeholder="Add to your list..." aria-label="Add a Task" />
+                </form>
+            </div>
+            <div class="col"><i>return</i></div>
+        </div>
+            <ul class="container">
+                <li class="draggable" draggable="true"> 
+                    <input class="toggle" type="checkbox" aria-label="Task Complete"/>
+                    <textarea name="task"></textarea>
+                    <span ><i class="fa-fa fa-ellipsis-vertical"></i></span>
+                </li>
+                <li class="draggable" draggable="true"> 
+                    <button class="toggle"></button>
+                    <textarea name="task"></textarea>
+                    <span ><i class="fa-fa fa-ellipsis-vertical"></i></span>
+                </li>
+                <li class="draggable" draggable="true"> 
+                    <button class="toggle"></button>
+                    <textarea name="task"></textarea>
+                    <span ><i class="fa-fa fa-ellipsis-vertical"></i></span>
+                </li>
+            </ul>
+            <div class="select-all">
+               
+                    <button class="btn">Clear all completed</button>
+               
+            </div>
+    </div>
 </body>
 </html>
