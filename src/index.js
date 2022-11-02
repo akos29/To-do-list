@@ -1,9 +1,10 @@
 import _, { after } from 'lodash';
 import './style.css';
-
-import * as el from './modules/elementSelector';
+import * as el from './modules/elementSelector.js';
+import generateTaskList from './modules/generateTaskList'
 
 // import { draggables } from './modules/elementSelector';
+
 
 el.draggables.forEach(draggable =>{
     draggable.addEventListener('dragstart',()=>{
@@ -16,6 +17,7 @@ el.draggables.forEach(draggable =>{
         draggable.classList.remove('dragging');
     })
 });
+
 
 
 el.container.addEventListener('dragover',(e) => {
@@ -49,9 +51,10 @@ function getDragAfterElement(container,y){
 function component() {
   const element = document.createElement('div');
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
+  // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  // element.classList.add('hello');
+  generateTaskList()
+  
   return element;
 }
 
