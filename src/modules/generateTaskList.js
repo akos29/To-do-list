@@ -1,29 +1,8 @@
 import * as el from './elementSelector.js';
-
-const tasksList = [
-  {
-    description: 'I will plan for the day',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Read for 40 min ',
-    completed: true,
-    index: 2,
-  },
-  {
-    description: 'Rest 5 min',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'Deep work for 1 hour',
-    completed: true,
-    index: 4,
-  },
-];
+import Tasks from './tasks.js';
 
 export default function populateTask() {
+  const tasksList = Tasks.getTask();
   tasksList.forEach((task) => {
     let checked = '';
     if (task.completed) { checked = 'checked'; }

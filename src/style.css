@@ -43,6 +43,16 @@ h2 {
   font-weight: 500;
 }
 
+#form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#form button {
+  background-color: transparent;
+}
+
 input::placeholder {
   text-transform: capitalize;
   font-style: italic;
@@ -83,8 +93,7 @@ textarea {
   width: 90%;
 }
 
-ul li:hover,
-textarea:hover {
+.active {
   background-color: yellow;
 }
 

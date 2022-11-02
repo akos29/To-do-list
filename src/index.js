@@ -2,8 +2,9 @@ import _ from 'lodash';
 import './style.css';
 import * as el from './modules/elementSelector.js';
 import generateTaskList from './modules/generateTaskList.js';
+// eslint-disable-next-line no-unused-vars
+import addTaskFormHandler from './modules/addTaskFormHandler.js';
 
-// import { draggables } from './modules/elementSelector';
 function getDragAfterElement(container, y) {
   const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
 
