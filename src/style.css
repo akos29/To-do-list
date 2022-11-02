@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bs-bg-color: #f2f3f5;
+}
+
+body {
+  background-color: var(--bs-bg-color);
+}
+
+.to-do-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  margin: 10%;
+  padding: 0;
+  gap: 0.5px;
+}
+
+h2 {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--bs-bg-color);
+  padding: 0.7rem 1rem;
+}
+
+.col,
+.head-col {
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+input::placeholder {
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  gap: 0.5px;
+  border: 1px solid var(--bs-bg-color);
+}
+
+.toggle {
+  background-color: transparent;
+  border: 2px solid var(--bs-bg-color);
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  padding: 17px 0;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+textarea {
+  padding: 3px 0;
+  line-height: 16px;
+  resize: none;
+  width: 90%;
+}
+
+ul li:hover,
+textarea:hover {
+  background-color: yellow;
+}
+
+.fa {
+  font-size: 48px;
+}
+
+.select-all {
+  padding: 0.7rem 1rem;
+  margin: 0;
+  background-color: var(--bs-bg-color);
+}
+
+.btn {
+  background-color: var(--bs-bg-color);
+  text-align: center;
+
+  /* margin-left:30%; */
+  border: 0;
+  margin: 0;
+  width: 100%;
+  padding: 0.7rem 0;
+}
+
+.draggable {
+  padding: 0.7rem 1rem;
+  background-color: white;
+  cursor: move;
+}
+
+.draggable .dragging {
+  opacity: 0.5;
+  background-color: #000;
+}
