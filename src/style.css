@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 
-:root{
-  --bs-bg-color:#f2f3f5;
+:root {
+  --bs-bg-color: #f2f3f5;
 }
 
 body {
-  background-color: var(--bs-bg-color)
+  background-color: var(--bs-bg-color);
 }
 
 .to-do-container {
@@ -20,7 +20,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   margin: 10%;
   padding: 0;
-  gap: .5px;
+  gap: 0.5px;
 }
 
 h2 {
@@ -38,12 +38,12 @@ h2 {
 
 .col,
 .head-col {
-  padding: 10px 0px;
+  padding: 10px 0;
   font-size: 18px;
   font-weight: 500;
 }
 
-input::placeholder{
+input::placeholder {
   text-transform: capitalize;
   font-style: italic;
 }
@@ -61,7 +61,7 @@ ul li {
   justify-content: space-between;
   list-style: none;
   align-items: center;
-  gap: .5px;
+  gap: 0.5px;
   border: 1px solid var(--bs-bg-color);
 }
 
@@ -106,7 +106,7 @@ textarea:hover {
   border: 0;
   margin: 0;
   width: 100%;
-  padding: 0.7rem 0rem;
+  padding: 0.7rem 0;
 }
 
 .draggable {
