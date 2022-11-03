@@ -161,3 +161,8 @@ ul li {
   visibility: visible;
   opacity: 1;
 }
+
+.done,
+input[type=checkbox]:checked {
+  text-decoration: line-through;
+}

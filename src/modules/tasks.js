@@ -1,4 +1,3 @@
-/* eslint-disable*/
 export default class Tasks {
   constructor(description, order, completed = false) {
     this.description = description;
@@ -8,43 +7,40 @@ export default class Tasks {
 
   static getTask() {
     let tasks;
-    if (localStorage.getItem('tasks') === null) 
-    {
+    if (localStorage.getItem('tasks') === null) {
       tasks = [];
+    } else {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
     }
-    else { tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
-    
+
     return tasks;
   }
 
   static addTask(task) {
     const tasks = Tasks.getTask();
-    tasks.push (task);
-    localStorage.setItem('tasks', JSON.stringify(tasks))
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
- 
-  static updateTask(desc,completed,i) {
+
+  static updateTask(desc, completed, i) {
     const tasks = Tasks.getTask();
     let flag = false;
-    tasks.forEach((task,index) => {
-        if(task.order === parseInt (i,10)){
-            tasks[index].order=index+1;
-            tasks[index].description=desc;
-            tasks[index].completed=completed;
-            return flag=true;
-        }
-    })
-   
-    console.log(flag)
-    if(flag){
-       localStorage.setItem('tasks', JSON.stringify(tasks))
+    tasks.forEach((task, index) => {
+      if (task.order === parseInt(i, 10)) {
+        tasks[index].order = index + 1;
+        tasks[index].description = desc;
+        tasks[index].completed = completed;
+        flag = true;
+      }
+      return flag;
+    });
+    if (flag) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     }
-    
   }
 
   static removeTask(id) {
-    const tasks =Tasks.getTask();
+    const tasks = Tasks.getTask();
     let flag = false;
     tasks.forEach((task, index) => {
       if (task.order === parseInt(id, 10)) {
@@ -53,17 +49,15 @@ export default class Tasks {
         flag = true;
       }
     });
-    
+
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log(flag)
     return flag;
   }
- 
+
   static sortTask() {
-    const tasks =Tasks.getTask();
-    tasks.forEach((task,index) => {
-        tasks[index].order=index+1;
-        console.log("index: ", index, "Value: ",tasks[index])
+    const tasks = Tasks.getTask();
+    tasks.forEach((task, index) => {
+      tasks[index].order = index + 1;
     });
 
     // for (let i =0; tasks.length ; i+=1 ){
@@ -73,5 +67,5 @@ export default class Tasks {
     //     t
     // }
     localStorage.setItem('tasks', JSON.stringify(tasks));
-}
+  }
 }

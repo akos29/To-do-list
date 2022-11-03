@@ -23,7 +23,6 @@ function component() {
   }
 
   el.draggables.forEach((draggable) => {
-    // const task = document.querySelector('.task');
     draggable.addEventListener('dragstart', () => {
       draggable.classList.add('dragging');
     });
@@ -55,4 +54,5 @@ function component() {
   }, false);
 }
 
-document.body.appendChild(component());
+component();
+// document.body.appendChild(component());

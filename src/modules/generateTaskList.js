@@ -5,9 +5,10 @@ export default function populateTask() {
   const tasksList = Tasks.getTask();
   tasksList.forEach((task) => {
     let checked = '';
-    if (task.completed) { checked = 'checked'; }
+    let status = '';
+    if (task.completed) { checked = 'checked'; status = 'done'; }
     const taskList = ` <li class="draggable" draggable="true">
-    <form class="form-update">   
+    <form class="form-update ${status}">   
         <input class="toggle" type="checkbox" aria-label="Task  Complete" ${checked} />
         <input class='task' name="task" value= "${task.description}"</input>
         <button id=${task.order} class="ellipsis">
@@ -21,16 +22,16 @@ export default function populateTask() {
     </form>
     </li>`;
     el.container.innerHTML += taskList;
-    const activateTrash = document.querySelectorAll('.ellipsis');
 
+    const activateTrash = document.querySelectorAll('.ellipsis');
     const tasks = document.querySelectorAll('.task');
+    const toggles = document.querySelectorAll('.toggle');
 
     activateTrash.forEach((ellipsis) => {
       const btnChildren = ellipsis.children;
       btnChildren[1].classList.add('hidden');
 
       ellipsis.addEventListener('mouseover', () => {
-        // ellipsis.classList.add('trash');
         btnChildren[1].classList.add('trash');
         ellipsis.parentElement.parentElement.classList.add('active');
         btnChildren[0].classList.add('hidden');
@@ -60,6 +61,7 @@ export default function populateTask() {
         btnChildren[1].classList.add('hidden');
       });
     });
+
     tasks.forEach((task) => {
       task.addEventListener('mousedown', () => {
         task.parentElement.parentElement.classList.add('active');
@@ -70,6 +72,18 @@ export default function populateTask() {
 
       task.addEventListener('change', () => {
         Tasks.updateTask(task.value, false, task.parentElement[2].id);
+      });
+    });
+
+    toggles.forEach((toggle) => {
+      toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+          toggle.parentElement.classList.add('done');
+          Tasks.updateTask(toggle.parentElement[1].value, true, toggle.parentElement[2].id);
+        } else {
+          toggle.parentElement.classList.remove('done');
+          Tasks.updateTask(toggle.parentElement[1].value, false, toggle.parentElement[2].id);
+        }
       });
     });
   });
