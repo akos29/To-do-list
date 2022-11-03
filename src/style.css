@@ -3,6 +3,8 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
+
+  /* transition: width 2s, height 2s, background-color 2s, transform 2s;   */
 }
 
 :root {
@@ -43,6 +45,29 @@ h2 {
   font-weight: 500;
 }
 
+#form,
+.form-update {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  background-color: transparent;
+}
+
+.task {
+  width: 90%;
+  font-size: 18px;
+  border: none;
+  padding: 0.5rem 0.2rem;
+  line-height: 16px;
+  resize: none;
+  background-color: transparent;
+}
+
+#form button {
+  background-color: transparent;
+}
+
 input::placeholder {
   text-transform: capitalize;
   font-style: italic;
@@ -76,16 +101,15 @@ ul li {
   border-radius: 2px;
 }
 
-textarea {
+/* textarea {
   padding: 3px 0;
   line-height: 16px;
   resize: none;
   width: 90%;
-}
+} */
 
-ul li:hover,
-textarea:hover {
-  background-color: yellow;
+.active {
+  background-color: yellow !important;
 }
 
 .fa {
@@ -118,4 +142,27 @@ textarea:hover {
 .draggable .dragging {
   opacity: 0.5;
   background-color: #000;
+}
+
+.trash {
+  background: yellow;
+}
+
+.ellipsis {
+  background-color: transparent;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.done,
+input[type=checkbox]:checked {
+  text-decoration: line-through;
 }
