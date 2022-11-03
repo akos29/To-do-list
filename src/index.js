@@ -4,6 +4,7 @@ import generateTaskList from './modules/generateTaskList.js';
 // eslint-disable-next-line no-unused-vars
 import addTaskFormHandler from './modules/addTaskFormHandler.js';
 import refresh from './modules/refresh.js';
+import Tasks from './modules/tasks.js';
 
 function component() {
   generateTaskList();
@@ -52,6 +53,11 @@ function component() {
   el.refresh.addEventListener('click', () => {
     refresh();
   }, false);
+
+  el.clearAll.addEventListener('click', () => {
+    Tasks.removeTasks();
+    refresh();
+  });
 }
 
 component();

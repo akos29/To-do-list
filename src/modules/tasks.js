@@ -45,7 +45,6 @@ export default class Tasks {
     tasks.forEach((task, index) => {
       if (task.order === parseInt(id, 10)) {
         tasks.splice(index, 1);
-        // call update after the deleted element
         flag = true;
       }
     });
@@ -54,18 +53,28 @@ export default class Tasks {
     return flag;
   }
 
+  static removeTasks() {
+    const tasks = Tasks.getTask();
+    const flag = false;
+    const completedTask = tasks.filter((task) => {
+      if (task.completed) {
+        return task;
+      }
+      return null;
+    });
+    completedTask.forEach((task) => {
+      Tasks.removeTask(task.order);
+    });
+
+    // localStorage.setItem('tasks', JSON.stringify(tasks));
+    return flag;
+  }
+
   static sortTask() {
     const tasks = Tasks.getTask();
     tasks.forEach((task, index) => {
       tasks[index].order = index + 1;
     });
-
-    // for (let i =0; tasks.length ; i+=1 ){
-    //     if (tasks[i] === null){
-    //         i+;
-    //     }
-    //     t
-    // }
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 }
