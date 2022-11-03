@@ -15,7 +15,6 @@ function getDragAfterElement(container, y) {
 }
 
 el.draggables.forEach((draggable) => {
-  // const task = document.querySelector('.task');
   draggable.addEventListener('dragstart', () => {
     draggable.classList.add('dragging');
   });
@@ -23,16 +22,9 @@ el.draggables.forEach((draggable) => {
   draggable.addEventListener('dragend', () => {
     draggable.classList.remove('dragging');
   });
-
-  draggable.addEventListener('click', () => {
-    draggable.classList.add('active');
-  });
-  draggable.addEventListener('click', () => {
-    draggable.classList.remove('active');
-  });
 });
 
-el.container.addEventListener('dragover', (e) => {
+export default el.container.addEventListener('dragover', (e) => {
   e.preventDefault();
   const afterElement = getDragAfterElement(el.container, e.clientY);
   const draggable = document.querySelector('.dragging');
