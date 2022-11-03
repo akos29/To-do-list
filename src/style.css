@@ -3,6 +3,8 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
+
+  /* transition: width 2s, height 2s, background-color 2s, transform 2s;   */
 }
 
 :root {
@@ -49,6 +51,7 @@ h2 {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  background-color: transparent;
 }
 
 .task {
@@ -58,6 +61,7 @@ h2 {
   padding: 0.5rem 0.2rem;
   line-height: 16px;
   resize: none;
+  background-color: transparent;
 }
 
 #form button {
@@ -105,7 +109,7 @@ ul li {
 } */
 
 .active {
-  background-color: yellow;
+  background-color: yellow !important;
 }
 
 .fa {
@@ -138,4 +142,22 @@ ul li {
 .draggable .dragging {
   opacity: 0.5;
   background-color: #000;
+}
+
+.trash {
+  background: yellow;
+}
+
+.ellipsis {
+  background-color: transparent;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
 }

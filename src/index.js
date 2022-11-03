@@ -3,6 +3,7 @@ import * as el from './modules/elementSelector.js';
 import generateTaskList from './modules/generateTaskList.js';
 // eslint-disable-next-line no-unused-vars
 import addTaskFormHandler from './modules/addTaskFormHandler.js';
+import refresh from './modules/refresh.js';
 
 function component() {
   generateTaskList();
@@ -49,12 +50,9 @@ function component() {
     }
   });
 
-  // Task update and delete
-  document.querySelectorAll('.test').forEach((task) => {
-    task.addEventListener('click', () => {
-      // Tasks.updateTask(task.textContent, task.completed, task.index);
-    });
-  });
+  el.refresh.addEventListener('click', () => {
+    refresh();
+  }, false);
 }
 
 document.body.appendChild(component());

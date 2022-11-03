@@ -26,40 +26,52 @@ export default class Tasks {
  
   static updateTask(desc,completed,i) {
     const tasks = Tasks.getTask();
-    const newTasks= tasks.map((task,index) => {
-        if(index === i){
-            task.description=desc;
-            task.completed=completed;
-            console.log(task,"Updated Task")
+    let flag = false;
+    tasks.forEach((task,index) => {
+        if(task.order === parseInt (i,10)){
+            tasks[index].order=index+1;
+            tasks[index].description=desc;
+            tasks[index].completed=completed;
+            return flag=true;
         }
     })
+   
+    console.log(flag)
+    if(flag){
+       localStorage.setItem('tasks', JSON.stringify(tasks))
+    }
     
-    localStorage.setItem('tasks', JSON.stringify(newTasks))
   }
 
   static removeTask(id) {
     const tasks =Tasks.getTask();
     let flag = false;
     tasks.forEach((task, index) => {
-        console.log(task.order, "=", id)
       if (task.order === parseInt(id, 10)) {
         tasks.splice(index, 1);
         // call update after the deleted element
         flag = true;
       }
     });
+    
     localStorage.setItem('tasks', JSON.stringify(tasks));
     console.log(flag)
     return flag;
   }
  
-//   static getTask(id) {
-//     const tasks =Tasks.getTask();
-//     tasks.forEach((task, index) => {
-//       if (task.id === parseInt(id, 10)) {
-//        return task;
-//       }
-//     });
-//    return null;
-//   }
+  static sortTask() {
+    const tasks =Tasks.getTask();
+    tasks.forEach((task,index) => {
+        tasks[index].order=index+1;
+        console.log("index: ", index, "Value: ",tasks[index])
+    });
+
+    // for (let i =0; tasks.length ; i+=1 ){
+    //     if (tasks[i] === null){
+    //         i+;
+    //     }
+    //     t
+    // }
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 }
