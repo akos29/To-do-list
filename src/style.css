@@ -43,10 +43,21 @@ h2 {
   font-weight: 500;
 }
 
-#form {
+#form,
+.form-update {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
+}
+
+.task {
+  width: 90%;
+  font-size: 18px;
+  border: none;
+  padding: 0.5rem 0.2rem;
+  line-height: 16px;
+  resize: none;
 }
 
 #form button {
@@ -86,12 +97,12 @@ ul li {
   border-radius: 2px;
 }
 
-textarea {
+/* textarea {
   padding: 3px 0;
   line-height: 16px;
   resize: none;
   width: 90%;
-}
+} */
 
 .active {
   background-color: yellow;
