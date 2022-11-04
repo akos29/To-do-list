@@ -65,8 +65,6 @@ export default class Tasks {
     completedTask.forEach((task) => {
       Tasks.removeTask(task.order);
     });
-
-    // localStorage.setItem('tasks', JSON.stringify(tasks));
     return flag;
   }
 
