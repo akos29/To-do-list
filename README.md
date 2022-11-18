@@ -1,8 +1,12 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To Do list 
+# Project 
 
-> To do tasks is a simplistic but suitable software for keeping track of daily activities. Users of this app will be able to add or remove tasks, label completed tasks as such, and slide items up or down to prioritize their order. The user now has the option to designate all jobs as completed at once.
+> To do tasks APP
+> A simple app to keep track of daily activities. You can add or remove tasks, label completed tasks and slide items up or down to prioritize their order. You have the option to designate all jobs as completed at once.
+
+<img width="662" alt="image" src="https://user-images.githubusercontent.com/35809268/202699594-fbe2e032-63f7-4c86-b988-6a941e5c605c.png">
+
 
 
 ## Built With
