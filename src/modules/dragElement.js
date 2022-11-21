@@ -28,7 +28,7 @@ export default el.container.addEventListener('dragover', (e) => {
   e.preventDefault();
   const afterElement = getDragAfterElement(el.container, e.clientY);
   const draggable = document.querySelector('.dragging');
-  if (afterElement == null) {
+  if (afterElement === null) {
     el.container.appendChild(draggable);
   } else {
     el.container.insertBefore(draggable, afterElement);
